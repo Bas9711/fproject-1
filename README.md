@@ -63,8 +63,7 @@ The configuration details of each machine may be found below.
 | Jump-Box | Gateway  | 20.210.224.165; 10.0.0.4  | Linux    |
 | Web-1        |webserver    | 10.0.0.5    | Linux            |
 | Web-2        |webserver    | 10.0.0.6   | Linux            |
-| Wev-3        |webserver    | 10.0.0.7    | Linux            |
-| ELKServer    |Kibana       |  10.1.0.0/16   | Linux       |
+| ELKServer    |Kibana       |  10.1.0.4  | Linux       |
 | RedTeam-LB|Load Balancer| 20.210.254.46 | DVWA            |
  
 In addition to the above, Azure has provisioned a load balancer in front of all machines except for the jump box. The load balancer's targets are organized into availability zones: Web-1 + Web-2
@@ -84,7 +83,6 @@ A summary of the access policies in place can be found in the table below.
 | ELKServer| No                  |  10.1.0.0/16         |
 | DVWA 1   | No                  |  10.0.0.5        |
 | DVWA 2   | No                  |  10.0.0.6        |
-| DVWA 3   | No                  | 10.0.0.7         |
 
  
 ---
@@ -103,16 +101,13 @@ The playbook implements the following tasks:
 - Launch docker container: elk
 - Command: sysctl -w vm.max_map_count=262144
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
- 
- <img width="675" alt="docker_ps" src="https://user-images.githubusercontent.com/66395625/94220139-f1568d00-fead-11ea-865b-2db7931cd4d4.PNG">
 
 Target Machines & Beats
 
 This ELK server is configured to monitor the following machines:
 
 - List the IP addresses of the machines you are monitoring:-
-    	- Web-1(10.1.0.9) Web-2(10.1.0.10)and Web-3(10.1.0.11)
+    	- Web-1(10.0.0.5) Web-2(10.0.0.6)
 
 We have installed the following Beats on these machines:
 - Specify which Beats you successfully installed:-
@@ -136,12 +131,12 @@ SSH into the control node and follow the steps below:
 /etc/ansible/host should include:
 
 [webservers]
-[10.1.0.9] ansible_python_interpreter=/usr/bin/python3
-[10.1.0.10] ansible_python_interpreter=/usr/bin/python3
-[10.1.0.11] ansible_python_interpreter=/usr/bin/python3
+[10.0.0.5] ansible_python_interpreter=/usr/bin/python3
+[10.0.0.6] ansible_python_interpreter=/usr/bin/python3
+
 
 [elk]
-[10.0.0.4] ansible_python_interpreter=/usr/bin/python3
+[10.1.0.4] ansible_python_interpreter=/usr/bin/python3
 
 Run the playbook, and SSH into the Elk vm, then run docker ps to check that the installation worked as expected.
 Playbook: install_elk.yml Location: /etc/ansible/install_elk.yml
