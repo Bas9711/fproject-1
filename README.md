@@ -7,15 +7,19 @@ Cybersecurity ELK Stack Project
  
 The files in this repository were used to configure the network depicted below.
 
-![vNet Diagram](https://github.com/Mana-Pool/Project-One-ELK-Stack/blob/bac22367b5011548fd7bd36438892ed712a7f71d/Project%201.jpg)
+![vNet Diagram]
  
 These files have been tested and used to generate an automated ELK Stack Deployment on Azure. They can be used to either recreate the entire deployment figured below. Otherwise, select portions of the YAML files may be used to install only certain pieces of it, for example, Filebeat and Metricbeat.
 
-  - [install-elk.yml](https://github.com/Mana-Pool/Project-One-ELK-Stack/blob/d197871ad20f7484ab11f1d0bbd6f6b5463a8a2a/Config%20Files/install-elk.yml)
-  - [filebeat-config.yml](https://github.com/Mana-Pool/Project-One-ELK-Stack/blob/d197871ad20f7484ab11f1d0bbd6f6b5463a8a2a/Config%20Files/filebeat-configuration.yml)
-  - [filebeat-playbook.yml](https://github.com/Mana-Pool/Project-One-ELK-Stack/blob/d197871ad20f7484ab11f1d0bbd6f6b5463a8a2a/Config%20Files/filebeat-playbook.yml)
-  - [metricbeat-config.yml](https://github.com/Mana-Pool/Project-One-ELK-Stack/blob/d197871ad20f7484ab11f1d0bbd6f6b5463a8a2a/Config%20Files/metricbeat-configuration.yml)
-  - [metricbeat-playbook.yml](https://github.com/Mana-Pool/Project-One-ELK-Stack/blob/d197871ad20f7484ab11f1d0bbd6f6b5463a8a2a/Config%20Files/metricbeat-playbook.yml)
+  - [install-elk.yml](https://github.com/Bas9711/fproject-1/blob/095052fb04bce306891b6d0abf55b22e05834c4a/CONFIG%20FILES/install-elk.yml
+)
+  - [filebeat-config.yml]https://github.com/Bas9711/fproject-1/blob/095052fb04bce306891b6d0abf55b22e05834c4a/CONFIG%20FILES/filebeat-configuration.yml
+
+  - [filebeat-playbook.yml]https://github.com/Bas9711/fproject-1/blob/095052fb04bce306891b6d0abf55b22e05834c4a/CONFIG%20FILES/filebeat-playbook.yml
+ 
+  - [metricbeat-config.yml](https://github.com/Bas9711/fproject-1/blob/095052fb04bce306891b6d0abf55b22e05834c4a/CONFIG%20FILES/metricbeat-configuration.yml
+)
+  - [metricbeat-playbook.yml]https://github.com/Bas9711/fproject-1/blob/095052fb04bce306891b6d0abf55b22e05834c4a/CONFIG%20FILES/metricbeat-playbook.yml
  
 This document contains the following details:
 - Description of the Topology
@@ -60,11 +64,11 @@ The configuration details of each machine may be found below.
  
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump-Box | Gateway  | 20.210.224.165; 10.0.0.4  | Linux    |
+| Jump-Box | Gateway  | 40.78.46.70; 10.0.0.5  | Linux    |
 | Web-1        |webserver    | 10.0.0.5    | Linux            |
 | Web-2        |webserver    | 10.0.0.6   | Linux            |
 | ELKServer    |Kibana       |  10.1.0.4  | Linux       |
-| RedTeam-LB|Load Balancer| 20.210.254.46 | DVWA            |
+| RedTeam-LB|Load Balancer| 13.90.156.166| DVWA            |
  
 In addition to the above, Azure has provisioned a load balancer in front of all machines except for the jump box. The load balancer's targets are organized into availability zones: Web-1 + Web-2
 
@@ -79,8 +83,8 @@ A summary of the access policies in place can be found in the table below.
  
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump-Box | Yes                 | 20.210.224.165; 10.0.0.4|
-| ELKServer| No                  |  10.1.0.0/16         |
+| Jump-Box | Yes                 | 40.78.46.70; 10.0.0.4|
+| ELKServer| No                  |  10.1.0.4        |
 | DVWA 1   | No                  |  10.0.0.5        |
 | DVWA 2   | No                  |  10.0.0.6        |
 
@@ -92,7 +96,7 @@ Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - What is the main advantage of automating configuration with Ansible?
-  	- This allows you to deploy to multiple servers using a single playbook
+  	- With this feature you can launch a multiple of servers by only using just one playbook.
 
 The playbook implements the following tasks:
 - Install docker.io
@@ -116,8 +120,8 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 
-   	- Filebeat monitors log files or locations you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
-   	- Metricbeat collects metrics from the operating system and from services running on the server.
+   	- Filebeat monitors also known as log files, collect log events then which forwards them to Elasticsearch or Logstash for indexing.
+   	- Metricbeat not only collects metrics from the operating system but from the services running on the server as well. 
 
  Using the Playbook-install-elk.yml
 
