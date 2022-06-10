@@ -156,11 +156,6 @@ Click 'Explore On Your Own' and you should see the following:
  - Create a new playbook in the /etc/ansible/roles/ directory that will install, drop in the updated configuration file, enable and configure system module, run the filebeat setup, and start the filebeat service.
 - Create a new playbook in the /etc/ansible/roles/ directory that will install, drop in the updated configuration file, enable and configure system module, run the metricbeat setup, and start the metricbeat service. 
  - Run the playbooks, and navigate back to the installation page on the ELk-Server GUI, click the check data on the Module Status
- - Click the verfiy incoming Data to check and see the receiving logs from the DVWA machines.  
-
-      you should see the following:
-
- <img width="960" alt="Filebeat syslog" src="https://github.com/Mana-Pool/Project-One-ELK-Stack/blob/9d946a64ba75195b72971129432289314d70f3f5/syslog2.jpg">
  
    The commands needed to run the Ansible configuration for the Elk-Server are:
 
