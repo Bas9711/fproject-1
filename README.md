@@ -50,15 +50,15 @@ Load balancing ensures that the application will be highly available, in additio
 
 
 > What is the advantage of a jump box?
-- A Jump Server is a gateway on a network used to access and manage devices in different security zones. A Jump Box acts as a "bridge" between two trusted networks zones and provides a controlled way to access them. We can block the public IP address associated with the VM. It helps to improve security also prevents all Azure VM’s to expose to the public.
+- A Jump Box acts as a bridge between two networks which provides a controlled access point. We can block the public IP address thtat is affiliated with the Virutal Machine. Not only does it help to improve security but also prevents all Azure Virutal Mahcines to be expose to the public eye.
 
 Integrating an Elastic Stack server allows us to easily monitor the vulnerable VMs for changes to their file systems and system metrics such as privilege escalation failures, SSH logins activity, CPU and memory usage, etc.
 
 > What does Filebeat watch for?
-- Filebeat helps keep things simple by offering a lightweight way (low memory footprint) to forward and centralize logs, files and watches for changes.
+- A Filebeat helps keep things straight to the point and easy. By offering a low maintenance memory blueprint to forward and centralize logs, files and watches for changes as well.
 
 > What does Metricbeat record?
-- Metricbeat helps monitor servers by collecting metrics from the system and services running on the server so it records machine metrics and stats, such as uptime.
+- Metricbeat helps watches servers by gathering metrics from the system and running on the server so it keeps track of the machine metrics and stats.
 
 The configuration details of each machine may be found below.
  
